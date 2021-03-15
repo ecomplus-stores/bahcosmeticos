@@ -1,0 +1,40 @@
+name: Optimize and merge
+
+on: pull_request
+
+jobs:
+  compress-images:
+    name: Optimize repository images
+    runs-on: ubuntu-latest
+    if: |
+       !contains(github.event.pull_request.title, '[skip ci]')
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Optimize with Calibre's image actions
+        uses: calibreapp/image-actions@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  auto-merge:
+    name: Auto merge dependencies PRs
+    runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
+
+    steps:
+      - name: Wait images optimization
+        run: sleep 120
+
+      - name: Request Dependabot merge
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            await github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '@dependabot squash and merge'
+            })
