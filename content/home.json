@@ -34,6 +34,10 @@
       "limit": 12,
       "page": 1,
       "title": "Os queridinhos do [b]momento[/b][small]Trouxemos todos os produtos must have para você arrasar para valer![/small]"
+    },
+    {
+      "type": "custom-html",
+      "html": "[apx]instagram[/apx]"
     }
   ]
 }
