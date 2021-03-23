@@ -4,7 +4,15 @@
   "sections": [
     {
       "type": "responsive-banner",
-      "img": "/img/uploads/fullbanner.png"
+      "img": "/img/uploads/fullbanner_.png"
+    },
+    {
+      "type": "info-bar",
+      "enabled": true
+    },
+    {
+      "type": "responsive-banner",
+      "img": "/img/uploads/banner_outlet.png"
     }
   ]
 }
