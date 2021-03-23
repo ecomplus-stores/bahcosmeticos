@@ -37,7 +37,11 @@
     },
     {
       "type": "custom-html",
-      "html": "[apx]instagram[/apx]"
+      "html": "[alpix]testimonials[/alpix]"
+    },
+    {
+      "type": "custom-html",
+      "html": "[alpix]instagram[/alpix]"
     }
   ]
 }
