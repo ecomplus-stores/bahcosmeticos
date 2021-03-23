@@ -1,23 +1,23 @@
 {
-  "store_id": 1234,
-  "name": "bahcosmeticos",
   "domain": "bahcosmeticos.netlify.app",
-  "short_name": "bahcosmeticos",
-  "description": "bahcosmeticos",
-  "primary_color": "#222831",
-  "secondary_color": "#393e46",
-  "bg_color": "#ffffff",
+  "currency_symbol": "R$",
+  "primary_color": "#4e2c76",
   "theme": {
     "bootswatch": "_",
     "custom": "_"
   },
-  "logo": "/img/uploads/logo.png",
-  "mini_logo": "",
-  "icon": "/img/icon.png",
-  "large_icon": "/img/large-icon.png",
-  "favicon": "/img/uploads/favicon.png",
+  "bg_color": "#ffffff",
+  "logo": "/img/uploads/logo-bah_.png",
+  "name": "bahcosmeticos",
+  "short_name": "Bah! Cosméticos",
   "lang": "pt_br",
   "currency": "BRL",
-  "currency_symbol": "R$",
-  "country_code": "BR"
+  "mini_logo": "",
+  "favicon": "/img/uploads/logo-bah_.png",
+  "country_code": "BR",
+  "secondary_color": "#f3c93d",
+  "icon": "/img/uploads/logo-bah_.png",
+  "store_id": 1234,
+  "description": "Uma variedade de produtinhos para você se cuidar!",
+  "large_icon": "/img/uploads/logo-bah_.png"
 }
