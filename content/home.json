@@ -13,6 +13,14 @@
     {
       "type": "responsive-banner",
       "img": "/img/uploads/banner_outlet.png"
+    },
+    {
+      "type": "collection-shelf",
+      "shuffle": false,
+      "limit": 3,
+      "page": 1,
+      "sort": "sales",
+      "title": "Bah! Cheinhas de [b]novidades[/b][small]Veja a seleção de produtos incríveis que separamos para você![/small]"
     }
   ]
 }
