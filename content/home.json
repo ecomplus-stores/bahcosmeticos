@@ -7,8 +7,8 @@
       "img": "/img/uploads/fullbanner_.png"
     },
     {
-      "type": "info-bar",
-      "enabled": true
+      "type": "custom-html",
+      "html": "[alpix]iconbar[/alpix]"
     },
     {
       "type": "collection-shelf",
