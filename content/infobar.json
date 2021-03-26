@@ -1,0 +1,26 @@
+{
+  "list": [
+    {
+      "icon": "/img/uploads/make.png",
+      "title": "+ de 50 mil produtinhos",
+      "text": "incríveis esperando por você!"
+    },
+    {
+      "title": "Frete fixo de R$15",
+      "text": "para todas as suas compras!",
+      "icon": "/img/uploads/caixa.png"
+    },
+    {
+      "title": "Descontos exclusivos",
+      "text": "no clube Bah! Cosméticos",
+      "icon": "/img/uploads/tag.png"
+    },
+    {
+      "title": "Envio para todo Brasil",
+      "text": "só escolher que vai até ai!",
+      "icon": "/img/uploads/aviao.png"
+    }
+  ],
+  "stripe_color": "#4e2c76",
+  "text_color": "#ffffff"
+}
