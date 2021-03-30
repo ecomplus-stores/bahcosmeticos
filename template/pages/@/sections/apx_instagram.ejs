@@ -1,0 +1,36 @@
+<% 
+
+var apx_content = _.cms('instafeed') || {}
+const title = apx_content.title
+
+%>
+
+<div class="container<%= apx_content.container.replace('Completa','-fluid').replace('Caixa','') %>">
+    <h4 class="bah-title">
+        <%- await include(`@/sections/apx_title`, { _,   title}) %>
+    </h4>
+    <div class="apx_instafeed row"></div>
+</div>
+<script>
+    fetch('https://graph.instagram.com/me/media?access_token=<%= apx_content.token %>&fields=media_url,media_type,caption,permalink')
+    .then(function (response) {
+        return response.json();
+    }).then(function (arr){
+        var images = "";
+        //console.log(arr.json());
+        for (var i = 0; i < <%= apx_content.quantity  %>; i++) {
+            if(arr.data[i].media_type == "IMAGE"){
+                images = images + "<div class='col-6 px-0 col-md-<%= 12/apx_content.quantity %>'><a href='"+ arr.data[i].permalink +"'>" +
+                    "<img src='"+ arr.data[i].media_url +"'/>" + 
+                    "<span>"+ arr.data[i].caption.substring(0,75) +"...</span>" +
+                "</a></div>";
+            }
+        }
+        let feed = document.querySelector('.apx_instafeed');
+        feed.innerHTML = feed.innerHTML + images;
+
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+</script>

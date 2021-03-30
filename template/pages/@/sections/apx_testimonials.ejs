@@ -1,0 +1,63 @@
+<% 
+
+var apx_content = _.cms('testimonials') || {}
+const title = apx_content.title
+
+%>
+
+<div class="container<%= apx_content.container.replace('Completa','-fluid').replace('Caixa','') %>">
+    <h4 class="bah-title">
+        <%- await include(`@/sections/apx_title`, { _,   title}) %>
+    </h4>
+    <div
+      class="glide"
+      data-wait-mutation="false"
+      data-autoplay="true"
+      data-per-view="<%= apx_content.quantity %>"
+      data-per-view-md="3"
+      data-per-view-sm="1"
+    >
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          <% for (let i = 0; i < apx_content.list.length; i++) { %>
+            <li class="glide__slide">
+                <div class="apx_testimonial-item">
+                    <% if (apx_content.list[i].icon) { %>
+                        <div class="icon"><img src="<%= apx_content.list[i].icon %>"/></div>
+                    <% } %>
+                    <% if (apx_content.list[i].text) { %>
+                        <p><%= apx_content.list[i].text %></p>
+                    <% } %>
+                    <% if (apx_content.list[i].title) { %>
+                        <strong><%= apx_content.list[i].title %></strong>
+                    <% } %>
+                </div>
+            </li>
+          <% } %>
+        </ul>
+
+        <% if(apx_content.list.length > apx_content.quantity) { %>
+        <div
+          class="glide__arrows glide__arrows--outer"
+          data-glide-el="controls"
+        >
+          <button
+            class="btn glide__arrow glide__arrow--left"
+            data-glide-dir="<"
+            aria-label="<%= _.dictionary('previous') %>"
+          >
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button
+            class="btn glide__arrow glide__arrow--right"
+            data-glide-dir=">"
+            aria-label="<%= _.dictionary('next') %>"
+          >
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        <% } %>
+      </div>
+    </div>
+    
+</div>

@@ -4,5 +4,177 @@
     "branch": "master",
     "identity_url": "https://gotrue.ecomplus.biz/1234/.netlify/identity",
     "gateway_url": "https://gitgateway.ecomplus.biz/1234/.netlify/git"
-  }
+  },
+  "collections": [
+    {
+      "label" : "alpix.dev",
+      "name": "alpix",
+      "files": [
+        {
+          "name": "infobar",
+          "label": "Barra de Informações",
+          "file": "content/infobar.json",
+          "editor": {
+            "preview": false
+          },
+          "fields": [
+            {
+              "label": "Cor da barra",
+              "name": "stripe_color",
+              "widget": "color"
+            },
+            {
+              "label": "Cor do texto",
+              "name": "text_color",
+              "widget": "color"
+            }, 
+            {
+              "label": "Largura da Seção",
+              "name": "container",
+              "widget": "select",
+              "options": ["Caixa","Completa"]
+            },          
+            {
+              "label":"Itens da barra",
+              "name":"list",
+              "widget" : "list",
+              "summary" : "{{fields.title}}",
+              "fields" : [               
+                {
+                  "label": "Título",
+                  "name": "title",
+                  "widget": "string"
+                },
+                {
+                  "label": "Texto",
+                  "name": "text",
+                  "widget": "string"
+                },
+                {
+                  "label": "Ícone",
+                  "name": "icon",
+                  "widget": "image",
+                  "required":false
+                }                  
+                
+              ]
+            }
+          ]
+        },
+        {
+          "name": "testimonials",
+          "label": "Depoimentos",
+          "file": "content/testimonials.json",
+          "editor": {
+            "preview": false
+          },
+          "fields": [
+            {
+              "label": "Título",
+              "name": "title",
+              "widget": "string",
+              "required":false
+            },  
+            {
+              "label": "Quantidade por slider",
+              "name": "quantity",
+              "widget": "select",
+              "options": ["1","2","3"]
+            },
+            {
+              "label": "Largura da Seção",
+              "name": "container",
+              "widget": "select",
+              "options": ["Caixa","Completa"]
+            },
+            {
+              "label":"Depoimentos",
+              "name":"list",
+              "widget" : "list",
+              "summary" : "{{fields.title}}",
+              "fields" : [               
+                {
+                  "label": "Nome do Cliente",
+                  "name": "title",
+                  "widget": "string"
+                },
+                {
+                  "label": "Texto",
+                  "name": "text",
+                  "widget": "text"
+                },
+                {
+                  "label": "Foto",
+                  "name": "icon",
+                  "widget": "image",
+                  "required":false
+                }                  
+                
+              ]
+            }
+          ]
+        },
+        {
+          "name": "instafeed",
+          "label": "Feed do Instagram",
+          "file": "content/instafeed.json",
+          "editor": {
+            "preview": false
+          },
+          "fields": [
+            {
+              "label": "Título",
+              "name": "title",
+              "widget": "string",
+              "required":false
+            },
+            {
+              "label": "Token",
+              "name": "token",
+              "widget": "string"
+            },
+            {
+              "label": "Quantidade de Fotos",
+              "name": "quantity",
+              "widget": "select",
+              "options": ["4","6","8"]
+            },
+            {
+              "label": "Largura da Seção",
+              "name": "container",
+              "widget": "select",
+              "options": ["Caixa","Completa"]
+            }
+          ]
+        },
+        {
+          "name": "whatsapp",
+          "label": "Botão Whatsapp",
+          "file": "content/whatsapp.json",
+          "editor": {
+            "preview": false
+          },
+          "fields": [
+            {
+              "label": "Ícone",
+              "name": "image",
+              "widget": "image",
+              "required":false
+            },
+            {
+              "label": "Número (Ex: 559900000000) 55 + DDD + Telefone",
+              "name": "number",
+              "widget": "string"
+            },
+            {
+              "label": "Posição",
+              "name": "position",
+              "widget": "select",
+              "options": ["Esquerda","Direita"]
+            }
+          ]
+        }
+      ]
+    }
+  ]        
 }

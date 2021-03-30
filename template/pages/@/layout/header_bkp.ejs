@@ -2,7 +2,6 @@
 // load header options and contacts from content
 const header = _.cms('header') || {}
 const contacts = _.cms('contacts') || {}
-const whatsapp = _.cms('whatsapp') || {}
 
 // social networks handled by contacts
 const networks = [
@@ -71,7 +70,59 @@ if (header.categories_list) {
       <% } %>
     <% } %>
   <% } %>
+
+  <div class="top-bar__nav d-none d-md-block">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <nav class="top-bar__page-links">
+            <% if (header.contacts_stripe.pages) { %>
+              <% header.contacts_stripe.pages.forEach(({ link, title }) => { %>
+                <a href="<%= link %>"><%= title %></a>
+              <% }) %>
+            <% } %>
+          </nav>
+          <% if (header.contacts_stripe.phone_wpp) { %>
+            <% if (contacts.whatsapp) { %>
+              <a
+                href="javascript:;"
+                target="_blank"
+                rel="noopener"
+                class="whatsapp-link"
+                data-tel="<%= contacts.whatsapp.replace(/\D/g, '') %>"
+              >
+                <i class="fab fa-whatsapp"></i>
+                <%= contacts.whatsapp %>
+              </a>
+            <% } %>
+            <% if (contacts.phone) { %>
+              <a
+                href="tel:+<%= contacts.phone.replace(/\D/g, '') %>"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fas fa-phone"></i>
+                <%= contacts.phone %>
+              </a>
+            <% } %>
+          <% } %>
+        </div>
+        <% if (header.contacts_stripe.socials) { %>
+          <div class="col-auto">
+            <% networks.forEach(network => { %>
+              <% if (contacts[network]) { %>
+                <a href="<%= contacts[network] %>" target="_blank" rel="noopener">
+                  <i class="fab fa-<%= network %>"></i>
+                </a>
+              <% } %>
+            <% }) %>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
 </div>
+
 <header class="header" id="header">
   <div class="header__container container-fluid">
     <div class="header__row row">
@@ -113,7 +164,7 @@ if (header.categories_list) {
           aria-label="<%= _.dictionary('myAccount') %>"
         >
           <button
-            class="d-lg-none btn btn-lg svg-btn"
+            class="d-lg-none btn btn-lg"
             id="mobile-search-btn"
             type="button"
             data-toggle="collapse"
@@ -123,55 +174,27 @@ if (header.categories_list) {
             aria-controls="search-bar"
             title="<%= _.dictionary('searchProducts') %>"
           >
-            
-          <img src="/img/uploads/search.svg"/>
-
+            <i class="fas fa-search"></i>
           </button>
-          <% if (whatsapp.number != undefined) {%>
-            <a
-              id="whatsapp-button"
-              class="btn btn-lg  svg-btn"
-              role="button"
-              href="<%= whatsapp.number %>"
-              title="<%= _.dictionary('myAccount') %>"
-            > 
-            <img src="/img/uploads/whatsapp.svg"/>
 
-              <div>
-                <b>Manda aqui!</b>
-                <u>Vamos ajudar você</u>
-              </div>
-            </a>
-          <% } %>
           <a
             id="user-button"
-            class="btn btn-lg svg-btn"
+            class="btn btn-lg"
             role="button"
             href="/app/#/account/"
             title="<%= _.dictionary('myAccount') %>"
           >
-            
-            <img src="/img/uploads/account.svg"/>
-            <div>
-              <b>Bah! Maravilhosx</b>
-              <u>Faz aqui o seu login</u>
-            </div>
+            <i class="fas fa-user"></i>
           </a>
           <a
             id="cart-button"
-            class="btn btn-lg  svg-btn"
+            class="btn btn-lg"
             role="button"
             href="/app/#/cart"
             title="<%= _.dictionary('openCart') %>"
           >
-            
-            <img src="/img/uploads/bag.svg"/>
-            <div>
-              <b>Minha Sacola</b>
-              <u><span id="cart-count"></span> itens incríveis</u>
-            </div>
-
-            
+            <i class="fas fa-shopping-bag"></i>
+            <span id="cart-count" class="badge badge-primary"></span>
           </a>
         </div>
 
@@ -205,7 +228,6 @@ if (header.categories_list) {
             <input
               type="search"
               name="term"
-              autocomplete="off"
               placeholder="<%= _.dictionary('searchProducts') %>"
               aria-label="<%= _.dictionary('searchProducts') %>"
               class="header__search-input form-control"
@@ -216,9 +238,7 @@ if (header.categories_list) {
               class="header__search-btn"
               aria-label="<%= _.dictionary('searchProducts') %>"
             >
-              
-            <img src="/img/uploads/search.svg"/>
-
+              <i class="fas fa-search"></i>
             </button>
             <div id="instant-search">
               <!--
@@ -243,31 +263,19 @@ if (header.categories_list) {
             %></script>
           <% } %>
         </div>
-      <% } %>      
-    </div>
-  </div>
-  <div id="bah-menu">
-    <div class="container" >
-      <div class="row ">
-        <% if (categories && categories.length) { %>
-          <div class="d-none d-lg-block <%= isCategoriesNavFull ? 'col-12' : 'col' %>">
-            <nav class="header__nav<%= isCategoriesNavFull ? ' header__nav--full' : '' %> justify-content-between d-flex w-100">
-              <div class="dropdown">
-                <a href="">
-                  Todos os Produtos
-                </a>
-              </div>
-              <div class="bah-links">
-              <% categories.forEach(({ slug, name }) => { %>
-                <a href="javascript:;" onclick="toggleSidenav('<%= slug %>')">
-                  <%= ` ${name} ` %>
-                </a>
-              <% }) %>
-              </div>
-            </nav>
-          </div>
-        <% } %>
-      </div>
+      <% } %>
+
+      <% if (categories && categories.length) { %>
+        <div class="d-none d-lg-block <%= isCategoriesNavFull ? 'col-12 order-lg-last' : 'col' %>">
+          <nav class="header__nav<%= isCategoriesNavFull ? ' header__nav--full' : '' %>">
+            <% categories.forEach(({ slug, name }) => { %>
+              <a href="javascript:;" onclick="toggleSidenav('<%= slug %>')">
+                <%= ` ${name} ` %>
+              </a>
+            <% }) %>
+          </nav>
+        </div>
+      <% } %>
     </div>
   </div>
 </header>

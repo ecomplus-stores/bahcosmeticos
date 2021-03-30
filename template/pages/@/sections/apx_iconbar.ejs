@@ -1,0 +1,40 @@
+<% 
+
+var apx_content = _.cms('infobar') || {}
+
+%>
+<% if (apx_content.container == "Completa"){ %>
+    <div class="container-fluid" style="background-color:<%= apx_content.stripe_color %>; color:<%= apx_content.text_color %>;">
+        <div class="apx_stripe py-2">
+<% }else{ %>
+    <div style="background-color:<%= apx_content.stripe_color %>; color:<%= apx_content.text_color %>;">
+        <div class="container">
+            <div class="apx_stripe py-2" >
+<% } %>    
+        <div class="row justify-content-between">
+            <% if (apx_content.list){ %>
+                <% apx_content.list.forEach(function(item){  %>
+                    <div class="col-auto px-4">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-auto pr-0">
+                                <% if (item.icon) { %>
+                                    <img src="<%= item.icon %>"/>
+                                <% } else { %>
+                                    <img src=""/>
+                                <% } %>
+                            </div>
+                            <div class="col">
+                                <b><%= item.title %></b><br>
+                                <span><%= item.text %></span>
+                            </div>
+                        </div>
+                    
+                    </div>
+                <% }) %>
+            <% } %>
+        </div>
+    </div>
+</div>
+<% if (apx_content.container == "Caixa"){ %>
+    </div>
+<% } %>   

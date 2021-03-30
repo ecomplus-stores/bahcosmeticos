@@ -1,9 +1,19 @@
 <% if (typeof opt.html === 'string') { %>
-  <section class="custom-html my-4 my-lg-5">
-    <div class="container">
-      <div class="html-clearfix">
-        <%- opt.html %>
+  <% try { %>
+    <% if (opt.html.includes('[alpix]')) { 
+      const module = opt.html.replace('[alpix]','').replace('[/alpix]','')    
+      %>
+      <%- await include(`@/sections/apx_${module}`, { _, module }) %>    
+    <% } else { %>
+    <section class="custom-html my-4 my-lg-5">
+      <div class="container">
+        <div class="html-clearfix">
+          <%- opt.html %>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <% } %>
+  <% } catch (err) {
+    console.log(err)
+   } %>
 <% } %>
