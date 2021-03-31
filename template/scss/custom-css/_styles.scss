@@ -272,3 +272,43 @@ display: flex;
     opacity:0;    
     transition:all .2s;
 }
+
+#bah-footer{
+    background:#4e2c76;
+    padding:3em 0;
+}
+#bah-footer strong{color:#f3c83d;text-transform:uppercase;font-weight:800;font-size:18px;display:block;margin-bottom:2rem;}
+#bah-footer form{}
+#bah-footer form input{height:40px;font-size:13px;color:#4e2c76;border-radius:40px;border:0;padding:0 15px;width:100%;display:block;margin:0 0 1rem 0;}
+#bah-footer form button{background:#f3c83d;border:0;text-transform:uppercase;font-weight:400;font-size:16px;height:36px;padding:0 1.5rem;border-radius:36px;line-height:36px;margin:0 0 0 auto;display:block;}
+#bah-footer .footer__links{columns:2;margin-bottom:2rem;}
+#bah-footer .footer__links > li{display:block;}
+#bah-footer .footer__links > li > a{color:#fff;font-weight:300;font-size:13px;}
+#bah-footer .footer__social a{opacity:1;margin-right:1rem;}
+#bah-footer .pay-icon{background-color:#fff;}
+#bah-footer .stamps>li{padding-top:0}
+
+.credits{
+    font-size:13px;
+    color:#4e2c76;
+}
+.ecom-credits{background:transparent;padding:1rem 0;}
+body > iframe{display:none;}
+
+.glide__arrow i{display:none;}
+.glide__arrow{
+    height:40px;
+    width:25px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size:0;
+    padding:0;
+}
+.glide__arrow--left{
+    background-image: url(/img/uploads/seta-esq.svg);
+}
+.glide__arrow.glide__arrow--right{
+    background-image: url(/img/uploads/seta-dir.svg);
+}
+.glide__slides,
+.glide__slide h4{margin:0;}
