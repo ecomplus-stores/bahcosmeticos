@@ -9,20 +9,16 @@
       "enabled": true
     },
     {
-      "type": "related-products",
-      "title": "Produtos relacionados"
-    },
-    {
-      "type": "recommended-products",
-      "title": "Quem comprou este produto, também comprou:"
-    },
-    {
       "type": "product-description",
       "enabled": true
     },
     {
       "type": "product-specifications",
       "enabled": true
-    }
+    },
+    {
+      "type": "related-products",
+      "title": "Quem comprou [b]este produto[/b][small]Comprou esses queridos aqui também para ficar ainda mais linda![/small]"
+    }    
   ]
 }

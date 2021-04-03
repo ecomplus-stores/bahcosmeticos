@@ -15,7 +15,7 @@
       </div>
 
       <div class="row">
-        <div class="col-12 col-md-6 mb-4">
+        <div class="col-12 col-md-7 mb-4">
           <!-- Picture(s) gallery will be inserted dynamically within `TheProduct` -->
           <% if (_.state.pictures) { %>
             <% const imgObj = _.ecomUtils.img(_.state, null, 'big') %>
@@ -50,9 +50,15 @@
           <h1 class="product__name">
             <%= _.ecomUtils.name(_.state) %>
           </h1>
-          <p class="product__sku">
+          <% if (_.state.short_description) { %>
+            <p class="product__info lead">
+              <%= _.state.short_description %>
+            </p>
+          <% } %>
+
+          <!-- <p class="product__sku">
             COD: <%= _.state.sku %>
-          </p>
+          </p> -->
 
           <div id="product-actions">
             <div id="product-loading">
@@ -94,13 +100,7 @@
                 </button>
               </div>
             </div>
-          </div>
-
-          <% if (_.state.short_description) { %>
-            <p class="product__info lead">
-              <%= _.state.short_description %>
-            </p>
-          <% } %>
+          </div>          
         </div>
       </div>
 
