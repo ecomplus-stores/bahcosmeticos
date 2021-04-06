@@ -75,14 +75,14 @@ if (header.categories_list) {
 <header class="header" id="header">
   <div class="header__container container-fluid">
     <div class="header__row row">
-      <div class="col-auto p-0">
+      <div class="col d-md-none p-0">
         <button
           class="btn header__toggler"
           type="button"
           onclick="toggleSidenav()"
           aria-label="Toggle side navigation"
         >
-          <i class="header__toggler-icon fas fa-bars"></i>
+          <i class="header__toggler-icon"></i>
           <% if (!categories.length) { %>
             <span class="d-none d-lg-inline">
               Menu
@@ -92,7 +92,7 @@ if (header.categories_list) {
       </div>
 
       <div class="col col-lg-auto pl-1 pl-md-2 pl-lg-3">
-        <a href="/">
+        <a href="/" class="d-block logo_">
           <% if (logo && logo.url) { %>
             <img
               id="logo"
@@ -106,13 +106,13 @@ if (header.categories_list) {
         </a>
       </div>
 
-      <div class="order-lg-last col-auto p-0">
+      <div class="order-lg-last col col-md-auto p-0">
         <div
           class="header__buttons"
           role="group"
           aria-label="<%= _.dictionary('myAccount') %>"
         >
-          <button
+          <!-- <button
             class="d-lg-none btn btn-lg svg-btn"
             id="mobile-search-btn"
             type="button"
@@ -126,7 +126,7 @@ if (header.categories_list) {
             
           <img src="/img/uploads/search.svg"/>
 
-          </button>
+          </button> -->
           <% if (whatsapp.number != undefined) {%>
             <a
               id="whatsapp-button"
@@ -194,7 +194,7 @@ if (header.categories_list) {
         const searchColSize = !isCategoriesNavFull && categories.length ? '-3' : ''
         %>
         <div
-          class="d-none d-lg-block col-12 col-lg<%= searchColSize %> collapse show"
+          class="d-lg-block col-12 col-lg<%= searchColSize %> collapse show"
           id="search-bar"
         >
           <form

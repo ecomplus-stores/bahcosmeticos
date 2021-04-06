@@ -12,26 +12,40 @@ var apx_content = _.cms('infobar') || {}
             <div class="apx_stripe py-2" >
 <% } %>    
         <div class="row justify-content-between">
-            <% if (apx_content.list){ %>
-                <% apx_content.list.forEach(function(item){  %>
-                    <div class="col-auto px-4">
-                        <div class="row d-flex align-items-center">
-                            <div class="col-auto pr-0">
-                                <% if (item.icon) { %>
-                                    <img src="<%= item.icon %>"/>
-                                <% } else { %>
-                                    <img src=""/>
-                                <% } %>
-                            </div>
-                            <div class="col">
-                                <b><%= item.title %></b><br>
-                                <span><%= item.text %></span>
-                            </div>
-                        </div>
-                    
-                    </div>
-                <% }) %>
-            <% } %>
+            <div
+                class="glide"
+                data-wait-mutation="false"
+                data-autoplay="3000"
+                data-per-view="4"
+                data-per-view-md="4"
+                data-per-view-sm="1"
+                
+            >
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        <% if (apx_content.list){ %>
+                            <% apx_content.list.forEach(function(item){  %>
+                                <div class="col-auto px-4 glide__slide">
+                                    <div class="row d-flex align-items-center">
+                                        <div class="col-auto pr-0">
+                                            <% if (item.icon) { %>
+                                                <img src="<%= item.icon %>"/>
+                                            <% } else { %>
+                                                <img src=""/>
+                                            <% } %>
+                                        </div>
+                                        <div class="col-auto">
+                                            <b><%= item.title %></b><br>
+                                            <span><%= item.text %></span>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                            <% }) %>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
