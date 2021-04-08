@@ -9,8 +9,15 @@
     "socials": true
   },
   "categories_list": {
-    "featured": [],
-    "random": 6,
+    "featured": [
+      "/maquiagem?Maquiagem",
+      "/corpo?Corpo",
+      "/rosto?Rosto",
+      "/unhas?Unhas",
+      "/acessorios?Acessórios",
+      "/outlet-da-bah?Outlet da Bah!"
+    ],
+    "random": 0,
     "full_width": true
   },
   "search_input": true
