@@ -377,11 +377,13 @@ h1.product__name{
     margin: 1rem 0 3rem 0;
 }
 
-.gallery__item,
-.gallery__big-image{
-    border:1px solid #7d7d7d
-}
+// .gallery__item,
+// .gallery__big-image{
+    
+// }
+.gallery__big-image{padding:0 3rem;}
 .product__production,
+.product__payment,
 .product__short-stock{display:none}
 
 .label-share{color:#000;font-size:11px;text-transform:uppercase;}
@@ -584,3 +586,207 @@ aside.menu .menu__list{padding-top:15px;}
     }
     
 }
+
+
+
+/* CHECKOUT */
+.app .checkout__info{
+    background: transparent;
+    border: 0;
+}
+.app .checkout__summary,
+#cart .cart__info{
+    padding: 2rem;
+    margin: 0;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.15);
+    border-radius: .6rem;
+    height: auto;
+    position: sticky;
+    top: 15px;
+    background:transparent
+}
+.checkout__summary .summary__title,
+.checkout__app .summary__buyer h5,
+#cart .cart__info [for="shipping-calculator-zip"]{
+    font-weight:600;
+}
+.checkout__app .summary__buyer p,
+.checkout__app .summary__buyer p *{font-size:12px}
+.checkout__app .summary__buyer p small{font-weight:600;}
+.checkout__summary .summary__list .summary__item > div{font-size:11px;}
+.checkout__summary .summary__list .summary__item > div > a{margin-top:5px;display:block;}
+.checkout__summary .summary__list .summary__item > div > a,
+.checkout__summary .summary__list .summary__item > div > a > small{font-size:12px;font-weight:600;}
+.checkout__summary .summary__list .summary__item > div > .badge{font-size:11px;background:transparent;color:var(--body-color);padding:0;font-weight:normal;margin-right:10px;}
+.checkout__summary .summary__list .summary__item > div > .badge:after{content:"x";}
+.checkout__summary .summary__amount > .summary__amount__row{
+    font-size: 14px;
+    border-bottom: 1px solid #ececec;
+    padding: 5px 0 10px 0;
+}
+#checkout .checkout .form-control{
+    border: .1rem solid #e1e1e1;
+    padding: 1.2rem;
+    border-radius: .3rem;
+    font-size: .8rem;
+}
+#checkout .checkout .form-control + .input-group-append{
+    border-radius: 0 .3rem .3rem 0;
+}
+#checkout .checkout .form-row > .form-group{
+    width: 100%;
+    min-width: 100%;
+}
+#checkout .checkout .form-group label{
+    font-size: .8rem;
+    font-weight: 500;
+}
+#checkout .checkout .input-group .btn{
+    line-height: normal;
+    font-size: .8rem;
+    border-radius: .3rem;
+    margin-left:1rem;
+}
+#spa #storefront-app h1:before{display:none;}
+#spa #storefront-app h1{}
+
+#checkout .checkout .login{max-width:100%; width:550px;}
+
+#checkout .checkout .login .h4,
+#checkout .checkout .checkout__account > p.lead{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+#checkout .checkout .checkout__account > p.lead{
+    border-bottom: 2px solid var(--body-color);
+    padding-bottom: 1rem;
+}
+#checkout .checkout .checkout__account > p.lead + form{
+    padding:1rem;    
+}
+#checkout .checkout .login__confirm{
+    background: #f8f9fa;
+    margin: 2rem 0rem!important;
+    padding: 2rem;
+    max-width: unset;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.15);
+    border-radius: .6rem;
+}
+#checkout .checkout .login__confirm .lead{font-size:.8rem;margin-bottom:1rem;}
+#checkout .checkout .login__oauth{margin-top:3rem;}
+#checkout .checkout .login__oauth .lead{font-size:1rem;}
+#checkout .checkout .login__info{display:none;}
+.app__footer{display:none}
+.app__header{
+    background: transparent;
+    box-shadow: unset;
+}
+.app footer,
+.app__credits{background:transparent}
+.app__credits *{
+    color:var(--body-color);
+    font-size:12px;
+}
+.app__header{
+    border-bottom: solid .1rem #e1e1e1;
+}
+.app footer{
+    border-top: solid .1rem #e1e1e1;
+}
+.app .ecom-credits a{font-size:0;}
+
+.app .checkout__back > a,
+.checkout__app .summary__buyer button,
+.checkout__account button,
+.checkout .account-addresses button[type="submit"],
+.checkout .checkout__btn-proceed,
+.checkout .account-addresses__card + .btn-outline-secondary,
+.discount-applier .discount-applier__coupon-btn,
+.checkout .payment .payment__method > form > button.btn-success,
+.checkout .payment .payment__method > button,
+.cart__info > .btn{
+    width: 100%;
+    text-align: center;
+    border-radius: 0.3rem;
+    text-transform: uppercase;
+    line-height: 2rem;
+}
+.checkout .checkout__btn-proceed{margin-top:1rem;}
+.checkout .checkout__btn-proceed i,
+.checkout .account-addresses button[type="submit"] i{display:none}
+.app__header .app__contact,
+.app__header .app__safe{font-size:12px;}
+
+.checkout__app .checkout__steps{
+    max-width: 80%;
+    margin: 0 auto 2rem auto;
+}
+.checkout__app .checkout__steps .checkout__step{
+    border-bottom:3px solid var(--body-color);
+    text-transform:initial;
+    padding:1rem;
+    font-weight:600;
+    position:relative;
+}
+.checkout__app .checkout__steps .checkout__step .fa-arrow-left{display:none}
+.checkout__app .checkout__steps .checkout__step:before{
+    content: "";
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    background: var(--body-color);
+    border-radius: 50%;
+    left: calc(50% - 8px);
+    bottom: -9px;
+}
+.checkout__app .checkout__steps .checkout__step *{color:var(--body-color);opacity:1;}
+.checkout__app .checkout__steps .checkout__step small{display:none}
+.checkout__app .checkout__steps .checkout__step--past,
+.checkout__app .checkout__steps .checkout__step--current{color:var(--body-color)}
+.checkout__app .checkout__steps .checkout__step--disabled:before{background: #e1e1e1;}
+.checkout__app .checkout__steps .checkout__step--disabled{border-color:#e1e1e1}
+
+.checkout .payment .list-group > a{
+    margin-bottom: 1rem;
+    border-radius: .3rem;
+    border: 1px solid #e1e1e1;
+    padding: 1.5rem;
+}
+.checkout .payment .list-group > a .payment__head{
+    margin: -1.5rem -1.5rem 1rem -1.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: .3rem .3rem 0 0;
+}
+.checkout .payment .list-group > a:hover .payment__head{
+    background: var(--body-color);
+    color: var(--body-bg);
+}
+
+.checkout .payment .payment__method{
+    border: 0;
+    border-radius: .3rem;
+    background:#f9f9f9
+}
+
+.list-group-item.active{
+    color: var(--body-color);
+    background-color: #f9f9f9;
+    border:0;
+}
+
+.cart .cart__list{}
+.cart .cart__list .cart-item:first-child{border-top:0}
+.cart .cart__list .cart-item{
+    border-bottom:1px solid #e1e1e1;
+    padding:1rem 0;
+    margin:0;
+}
+.cart .cart__list .cart-item__name,
+.cart .cart__list .cart-item__name a{
+    font-size:1rem;
+    font-weight:600;
+    text-decoration:none;
+}
+.cart .cart__list .cart-item__quantity{}
+.cart .cart__list .cart-item__prices{font-weight:600}
+.cart .cart__list .cart-item__prices .cart-item__price-un{}
