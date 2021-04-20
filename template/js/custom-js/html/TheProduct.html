@@ -87,6 +87,24 @@
           </slot>
 
           <template v-else>
+            
+            <slot
+              name="variations"
+              v-if="hasVariations"
+            >
+              <product-variations
+                :product="body"
+                :selected-id.sync="selectedVariationId"
+                @select-option="handleGridOption"
+                :maxOptionsBtns="99"
+              />
+              <a-alert :can-show="hasClickedBuy && !selectedVariationId">
+                {{ i19selectVariationMsg }}
+              </a-alert>
+
+              <slot name="variations-info"/>
+            </slot>
+
             <slot name="prices">
               <p class="product__prices">
                 <a-prices
@@ -111,21 +129,7 @@
               </p>
             </slot>
 
-            <slot
-              name="variations"
-              v-if="hasVariations"
-            >
-              <product-variations
-                :product="body"
-                :selected-id.sync="selectedVariationId"
-                @select-option="handleGridOption"
-              />
-              <a-alert :can-show="hasClickedBuy && !selectedVariationId">
-                {{ i19selectVariationMsg }}
-              </a-alert>
-
-              <slot name="variations-info"/>
-            </slot>
+            
 
             <slot
               name="customizations"

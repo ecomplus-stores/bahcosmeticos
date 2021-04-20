@@ -22,7 +22,7 @@
       "type": "brands-carousel",
       "limit": 24,
       "offset": 0,
-      "autoplay": 2000
+      "autoplay": 4000
     },
     {
       "type": "responsive-banner",
