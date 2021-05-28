@@ -1,6 +1,6 @@
 {
   "marketing_stripe": {
-    "text": "Aproveite nossos descontos de até 40%!",
+    "text": "Aproveite o cupom de inauguração com 15%! BEMVINDO15",
     "link": "/promotion"
   },
   "contacts_stripe": {
@@ -10,9 +10,10 @@
   },
   "categories_list": {
     "featured": [
-      "/maquiagem?Maquiagem",
-      "/corpo?Corpo",
       "/rosto?Rosto",
+      "/boca?Boca",
+      "/olhos?Olhos",
+      "/corpo?Corpo",
       "/unhas?Unhas",
       "/acessorios?Acessórios",
       "/outlet-da-bah?Outlet da Bah!"
