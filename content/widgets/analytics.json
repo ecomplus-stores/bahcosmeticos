@@ -1,10 +1,10 @@
 {
   "pkg": "@ecomplus/widget-analytics",
-  "active": false,
+  "active": true,
   "desktopOnly": false,
   "enableCheckout": true,
   "options": {
-    "gaTrackingId": ""
+    "gaTrackingId": "G-900N7449TD"
   },
   "headAppend": "src/append/head"
 }
