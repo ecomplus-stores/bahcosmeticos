@@ -4,10 +4,11 @@ on: pull_request
 
 jobs:
   compress-images:
-    name: Optimize repository images
+    name: Compress repository images
     runs-on: ubuntu-latest
     if: |
-       !contains(github.event.pull_request.title, '[skip ci]')
+      !contains(github.event.pull_request.title, '[skip ci]') &&
+      !startsWith(github.head_ref, 'chore')
 
     steps:
       - name: Checkout
@@ -18,23 +19,27 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  auto-merge:
-    name: Auto merge dependencies PRs
-    runs-on: ubuntu-latest
-    if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
-
-    steps:
       - name: Wait images optimization
         run: sleep 120
 
-      - name: Request Dependabot merge
-        uses: actions/github-script@v3
+  auto-merge:
+    name: Auto merge dependencies PRs
+    runs-on: ubuntu-latest
+    if: |
+      github.actor == 'renovate[bot]' ||
+      github.actor == 'renovate-preview[bot]'
+
+    steps:
+      - name: Squash and merge
+        if: |
+          contains(github.event.pull_request.body, 'Automerge**: Enabled')
+        uses: actions/github-script@v4
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            await github.issues.createComment({
-              issue_number: context.issue.number,
+            await github.pulls.merge({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '@dependabot squash and merge'
+              pull_number: context.payload.pull_request.number,
+              merge_method: 'squash'
             })

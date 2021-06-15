@@ -1,9 +1,16 @@
 {
-  "name": "storefront-ssr",
-  "private": true,
+  "name": "storefront-functions",
   "version": "0.1.0",
-  "description": "SSR for Storefront on Netlify with Lambda functions",
+  "description": "SSR for Storefront on Firebase with Cloud Functions",
+  "engines": {
+    "node": "12"
+  },
   "main": "index.js",
+  "dependencies": {
+    "@ecomplus/storefront-renderer": "^2.7.3",
+    "firebase-admin": "^9.9.0",
+    "firebase-functions": "^3.14.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,12 +24,5 @@
     "url": "https://github.com/ecomplus/storefront-starter/issues"
   },
   "homepage": "https://github.com/ecomplus/storefront-starter#readme",
-  "dependencies": {
-    "@ecomplus/storefront-renderer": "^2.7.3"
-  },
-  "files": [
-    "bundles.json",
-    "content/*",
-    "template/*"
-  ]
+  "private": true
 }
