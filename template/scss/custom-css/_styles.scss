@@ -262,7 +262,8 @@ display: flex;
 .apx_instafeed{}
 .apx_instafeed a{position:relative;display:block;}
 .apx_instafeed a:hover img{opacity:.5}
-.apx_instafeed a img{max-width:100%;transition:all .2s;}
+.apx_instafeed a img,
+.apx_instafeed a video{max-width:100%;transition:all .2s; float:left;}
 .apx_instafeed a:hover span{opacity:1}
 .apx_instafeed a span{
     padding: 2rem;
