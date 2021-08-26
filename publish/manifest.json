@@ -1,0 +1,37 @@
+{
+  "icons": [
+    {
+      "src": "/icon_512x512.8aac107562ea5005732ea86ee94ee7f8.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_384x384.53427d9abb38cabc1149b0b414fb61ac.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_192x192.12ae546f2398d071a2f38c2f5f39742b.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_128x128.8d84ea6a575dfd13b8dd4f9183ef591b.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_96x96.af88aafa6ce8eba1d5cbebceabef7ca5.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "Bah! Cosméticos",
+  "short_name": "Bah! Cosméticos",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "description": "Uma variedade de produtinhos para você se cuidar!",
+  "background_color": "#ffffff",
+  "theme_color": "#4e2c76"
+}
